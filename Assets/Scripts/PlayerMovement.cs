@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed = 5f;
     //PlayerInputActions playerInputActions;
     DefaultInputActions defaultInputActions;
+    public Vector2 inputVector;
 
 
 
@@ -22,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
-        Vector2 inputVector = defaultInputActions.Player.Move.ReadValue<Vector2>();
+        inputVector = defaultInputActions.Player.Move.ReadValue<Vector2>();
         //tankRigidbody.AddForce(inputVector * speed, ForceMode2D.Force);
         this.gameObject.transform.Translate(inputVector.x * speed * Time.deltaTime, inputVector.y * speed * Time.deltaTime, 0);
     }

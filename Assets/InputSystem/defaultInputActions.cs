@@ -38,7 +38,7 @@ public partial class @DefaultInputActions : IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Look"",
-                    ""type"": ""Value"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""8a69194d-fd70-4796-8f06-a67623343b0e"",
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
@@ -224,7 +224,7 @@ public partial class @DefaultInputActions : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""82a32c03-68ad-4d14-bd2a-6ec658a2d2fc"",
-                    ""path"": ""<Touchscreen>/touch1/delta"",
+                    ""path"": ""<Touchscreen>/touch0/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Touch"",

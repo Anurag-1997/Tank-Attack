@@ -4683,6 +4683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  inputVector: {x: 0, y: 0}
 --- !u!114 &1567590873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4911,4 +4912,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _sensitivity: 1
-  cam: {fileID: 519420031}
+  aimStick: {fileID: 1012963542}
