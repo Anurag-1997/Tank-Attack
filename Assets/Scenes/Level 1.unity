@@ -4911,5 +4911,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7453dd1affd3d484f913e6d117f04f6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sensitivity: 1
   aimStick: {fileID: 1012963542}

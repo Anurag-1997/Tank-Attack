@@ -8,7 +8,7 @@ public class GunRotation : MonoBehaviour
 {
     DefaultInputActions defaultInputActions;
     private Vector2 _lookInputVector;
-    [SerializeField] float _sensitivity=1f;
+    //[SerializeField] float _sensitivity=1f;
     Vector3 _targetDirection;
     float _lookAngle;
     [SerializeField] GameObject aimStick;
@@ -25,6 +25,7 @@ public class GunRotation : MonoBehaviour
         //cam = Camera.main;
         defaultInputActions = new DefaultInputActions();
         defaultInputActions.Player.Enable();
+        
     }
 
     private void Start()
@@ -45,7 +46,15 @@ public class GunRotation : MonoBehaviour
         aimStickDirection.y = aimStick.transform.position.y - aimStickOrigin.y;
 
         _lookAngle = Mathf.Atan2(aimStickDirection.y, aimStickDirection.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, -90) * Quaternion.AngleAxis(_lookAngle, Vector3.forward);
+
+        if (_lookAngle!=0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, -90) * Quaternion.AngleAxis(_lookAngle, Vector3.forward);
+        }
+        
+
+
+       
 
 
         
