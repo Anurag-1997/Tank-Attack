@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 
 public class GunRotation : MonoBehaviour
 {
+
     DefaultInputActions defaultInputActions;
     private Vector2 _lookInputVector;
     //[SerializeField] float _sensitivity=1f;
@@ -14,11 +15,11 @@ public class GunRotation : MonoBehaviour
     [SerializeField] GameObject aimStick;
     Vector2 aimStickOrigin;
     Vector2 aimStickDirection;
+    private Vector3 _mousePos;
+    //[SerializeField] Camera cam;
     
     
 
-    private Vector3 _mousePos;
-    //[SerializeField] Camera cam;
 
     private void Awake()
     {
@@ -43,6 +44,11 @@ public class GunRotation : MonoBehaviour
 
     private void Update()
     {
+        GunLook();
+    }
+
+    private void GunLook()
+    {
         defaultInputActions.Player.Look.performed += Look_performed;
         _lookInputVector = defaultInputActions.Player.Look.ReadValue<Vector2>();
         //_lookInputVector = Mouse.current.position.ReadValue();
@@ -55,23 +61,10 @@ public class GunRotation : MonoBehaviour
 
         _lookAngle = Mathf.Atan2(aimStickDirection.y, aimStickDirection.x) * Mathf.Rad2Deg;
 
-        if (_lookAngle!=0)
+        if (_lookAngle != 0)
         {
             transform.rotation = Quaternion.Euler(0, 0, -90) * Quaternion.AngleAxis(_lookAngle, Vector3.forward);
         }
-        
-
-
-       
-
-
-        
-
-       
-        
-        
-
-        
     }
 
     private void Look_performed(InputAction.CallbackContext context)
