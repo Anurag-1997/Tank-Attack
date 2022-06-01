@@ -24,8 +24,16 @@ public class GunRotation : MonoBehaviour
     {
         //cam = Camera.main;
         defaultInputActions = new DefaultInputActions();
-        defaultInputActions.Player.Enable();
+        //defaultInputActions.Player.Enable();
         
+    }
+    private void OnEnable()
+    {
+        defaultInputActions.Player.Enable();
+    }
+    private void OnDisable()
+    {
+        defaultInputActions.Player.Disable();
     }
 
     private void Start()
