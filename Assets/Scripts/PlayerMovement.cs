@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     //PlayerInputActions playerInputActions;
     DefaultInputActions defaultInputActions;
     public Vector2 inputVector;
+    [SerializeField] Camera cam;
+    Vector3 offset;
 
 
 
@@ -19,9 +21,22 @@ public class PlayerMovement : MonoBehaviour
         tankRigidbody = GetComponent<Rigidbody2D>();
         defaultInputActions = new DefaultInputActions();
         defaultInputActions.Player.Enable();
+        cam = Camera.main;
         //playerInputActions.Player.Movement.performed += Movement_performed;
     }
+    private void Start()
+    {
+        offset = cam.transform.position - transform.position;
+    }
     private void Update()
+    {
+        Move();
+
+        cam.transform.position = transform.position + offset;
+
+    }
+
+    private void Move()
     {
         inputVector = defaultInputActions.Player.Move.ReadValue<Vector2>();
         //tankRigidbody.AddForce(inputVector * speed, ForceMode2D.Force);
@@ -30,10 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movement_performed(InputAction.CallbackContext context)
     {
-        Debug.Log("Movement " + context);
-       
-        
-        
+        Debug.Log("Movement " + context);   
     }
 
         

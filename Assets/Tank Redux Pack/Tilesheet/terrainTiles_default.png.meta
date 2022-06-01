@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -980,7 +980,7 @@ TextureImporter:
     nameFileIdTable:
       terrainTiles_default_6: -1217927521
       terrainTiles_default_32: -1014760177
-      terrainTiles_default_39: 872341549
+      terrainTiles_default_24: -1690418363
       terrainTiles_default_28: -1311584916
       terrainTiles_default_21: -1133943760
       terrainTiles_default_18: 181983674
@@ -1009,13 +1009,13 @@ TextureImporter:
       terrainTiles_default_25: 1836355440
       terrainTiles_default_16: -297091625
       terrainTiles_default_2: 621108031
-      terrainTiles_default_3: -529362367
       terrainTiles_default_20: 1072957300
-      terrainTiles_default_31: 770541453
+      terrainTiles_default_3: -529362367
+      terrainTiles_default_39: 872341549
       terrainTiles_default_33: 1756228670
       terrainTiles_default_22: -485761113
+      terrainTiles_default_31: 770541453
       terrainTiles_default_11: 1856920535
-      terrainTiles_default_24: -1690418363
       terrainTiles_default_29: 1756602399
       terrainTiles_default_13: -1462351331
   spritePackingTag: 

@@ -13,9 +13,12 @@ public class PlayerBullet : MonoBehaviour
     [SerializeField] Vector2 bulletDir;
     DefaultInputActions defaultInputActions;
     bool firePressed = false;
+    AudioSource audiosource;
+    [SerializeField] AudioClip shootSound;
     private void Awake()
     {
         defaultInputActions = new DefaultInputActions();
+        audiosource = GetComponent<AudioSource>();
         
     }
     private void Start()
@@ -38,7 +41,9 @@ public class PlayerBullet : MonoBehaviour
             bulletTemp = Instantiate(bulletPrefab, shootPosition.position, gunBarrel.transform.rotation);
             bulletRb2d = bulletTemp.gameObject.GetComponent<Rigidbody2D>();
             bulletDir = shootPosition.position - gunBarrel.transform.position;
+            audiosource.PlayOneShot(shootSound);
             bulletRb2d.velocity = bulletDir * bulletVelocity;
+
         }
 
     }
